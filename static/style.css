@@ -1,0 +1,141 @@
+body {
+    background-image: url('newmoms1.png'); /* Replace with your image path */
+    background-size: cover; /* Cover the entire viewport */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Centers the image */
+    height: 90vh; /* Ensures the body takes the full height of the viewport */
+}
+
+.chat-container {
+    max-width: 600px;           /* Maximum width of the chat container */
+    margin: 40px auto;         /* Centering with vertical margin */
+    margin-right: 20px;        /* Adds a 20px gap on the right side */
+    border-radius: 10px;       /* Rounded corners */
+    overflow: hidden;           /* Hides overflow content */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+.chat-header {
+    background-color: #ffcc80; /* Light peach for the header */
+    color: #333333; /* Dark text for contrast */
+    padding: 15px;
+    text-align: center;
+    font-size: 1.5rem; /* Adjusted header font size */
+}
+
+.chat-box {
+    height: 500px;
+    padding: 20px;
+    overflow-y: auto;
+    background-color: #ffffff; /* White for simplicity */
+}
+
+.user-message,
+.ai-response {
+    max-width: 75%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    line-height: 1.5;
+    word-wrap: break-word;
+    font-weight: 500; /* Semi-bold for readability */
+}
+
+.user-message {
+    background-color: #ffe0b2; /* Light peach for user messages */
+    color: #333333; /* Dark text for contrast */
+    font-weight: 600; /* Bolder text for visibility */
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.ai-response {
+    background-color: #f8f9fa; /* Very light gray for AI response */
+    color: #333333; /* Dark gray text for contrast */
+    align-self: flex-start;
+}
+
+.timestamp {
+    font-size: 0.8rem; /* Smaller timestamp size */
+    color: #aaaaaa; /* Light gray for timestamps */
+    margin-bottom: 5px;
+    text-align: right;
+}
+
+.input-group {
+    margin-top: 15px;
+}
+
+textarea {
+    background-color: #fff9db; /* Soft light yellow for input area */
+    border: 1px solid #ffcc80; /* Light peach border */
+    border-radius: 8px;
+    padding: 10px;
+    resize: none;
+    outline: none;
+    font-size: 0.9rem; /* Adjusted textarea font size */
+}
+
+button {
+    background-color: #ffcc80; /* Light peach for the button */
+    border: none;
+    color: #333333; /* Dark text for visibility */
+    padding: 10px 14px; /* Larger padding for button */
+    border-radius: 8px;
+    font-size: 1rem; /* Adjusted button font size */
+    font-weight: 600; /* Bold text for better contrast */
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ffb74d; /* Slightly darker peach on hover */
+}
+
+
+button {
+    background-color: #ffcc80; /* Light peach for the button */
+    border: none; /* No border */
+    color: #333333; /* Dark text for visibility */
+    padding: 10px 14px; /* Larger padding for button */
+    border-radius: 8px; /* Rounded corners */
+    font-size: 1rem; /* Adjusted button font size */
+    font-weight: 600; /* Bold text for better contrast */
+    cursor: pointer; /* Cursor changes to pointer on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+button:hover {
+    background-color: #ffb74d; /* Slightly darker peach on hover */
+}
+
+button:focus {
+    outline: none; /* Remove outline on focus */
+}
+
+.chat-box::-webkit-scrollbar {
+    width: 5px; /* Width of the scrollbar */
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.1); /* Light scrollbar */
+    border-radius: 10px; /* Rounded corners for the scrollbar */
+}
+
+.styled-button {
+    display: inline-block; /* Inline block to keep button shape */
+    background-color: #ffb74d; /* Button color */
+    color: #fff; /* White text for contrast */
+    padding: 10px 20px; /* Padding for button */
+    border: none; /* No border */
+    border-radius: 8px; /* Rounded corners */
+    text-align: right; /* Center text */
+    text-decoration: none; /* Remove underline */
+    font-size: 1rem; /* Font size */
+    font-weight: 600; /* Bold text */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    cursor: pointer; /* Pointer cursor */
+}
+
+.styled-button:hover {
+    background-color: #ff9f00; /* Darker shade on hover */
+}

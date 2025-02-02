@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Moms Guide</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='style.css') }}" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="chat-container">
+        <div class="chat-header d-flex justify-content-between align-items-center">
+            <span>New moms guide</span>
+            <a href="{{ url_for('new_chat') }}" class="styled-button">Clear</a>
+        </div>
+                
+        <div class="chat-box" id="chatBox">
+            {% for timestamp, message in chat_history %}
+                <div class="timestamp">{{ timestamp }}</div>
+                <div class="user-message"><strong>User:</strong> {{ message.user_input }}</div>
+                
+                {% if message.file_url %}
+                    <div class="file-response">
+                        <strong>Uploaded File:</strong>
+                        <a href="{{ url_for('static', filename=message.file_url) }}" target="_blank">{{ message.file_name }}</a>
+                    </div>
+                {% endif %}
+                
+                <div class="ai-response"><strong>AI:</strong></div>
+                <div class="ai-response-content">
+                    {% if message.ai_response is string %}
+                        {{ message.ai_response }}  <!-- Display directly if it's a string -->
+                    {% else %}
+                        {% for section, content in message.ai_response.items() %}
+                            <div><strong>{{ section }}</strong></div>
+                            <div>
+                                {% if content is mapping %}  <!-- Check if content is a dictionary -->
+                                    {% for key, value in content.items() %}
+                                        <strong>{{ key }}:</strong> {{ value }}<br>
+                                    {% endfor %}
+                                {% else %}
+                                    {{ content }}  <!-- Display directly if it's not a dictionary -->
+                                {% endif %}
+                            </div>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+            {% endfor %}
+        </div>
+        
+        <script>
+            var chatBox = document.getElementById("chatBox");
+            chatBox.scrollTop = chatBox.scrollHeight;
+        </script>
+        
+
+        <!-- Form for file upload, text input, and voice input -->
+        <form method="POST" class="input-group" enctype="multipart/form-data">
+            <!-- File upload -->
+            <span class="input-group-text">
+                <label for="file-upload" class="bi bi-paperclip" style="cursor: pointer;"></label>
+                <input type="file" name="file" id="file-upload" style="display: none;">
+            </span>
+
+            <!-- Language selection dropdown -->
+            <span class="input-group-text">
+                <select id="language-select" class="form-select">
+                    <option value="en-US">English</option>
+                    <option value="hi-IN">Hindi</option>
+                    <option value="es-ES">Spanish</option>
+                    <option value="fr-FR">French</option>
+                    <!-- Add more languages as needed -->
+                </select>
+            </span>
+
+            <!-- Voice input button -->
+            <span class="input-group-text">
+                <i class="bi bi-mic" id="voice-btn" style="cursor: pointer;"></i>
+            </span>
+            
+            <!-- Text input -->
+            <textarea name="user_input" id="user_input" rows="2" class="form-control" placeholder="Type your message here..." required></textarea>
+            <button type="submit" class="btn-primary">Send</button>
+        </form>
+    </div>
+
+    <!-- Bootstrap 5 JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Web Speech API for Voice Input -->
+    <script>
+        document.getElementById('voice-btn').addEventListener('click', function () {
+            const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+
+            // Get the selected language from the dropdown
+            const selectedLanguage = document.getElementById('language-select').value;
+            recognition.lang = selectedLanguage;  // Set the language for recognition
+
+            recognition.interimResults = false;
+            recognition.maxAlternatives = 1;
+
+            recognition.onresult = function (event) {
+                const transcript = event.results[0][0].transcript;
+                document.getElementById('user_input').value = transcript;
+            };
+
+            recognition.onerror = function (event) {
+                console.error("Speech recognition error detected: " + event.error);
+            };
+
+            recognition.start();
+        });
+    </script>
+</body>
+
+</html>

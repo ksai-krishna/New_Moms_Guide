@@ -1,0 +1,188 @@
+{
+    "patient_name": "Mrs. NAVANEETHA",
+    "age": 26,
+    "sex": "F",
+    "lab_no": 728,
+    "referral": "Self",
+    "test_date": "10/04/2013",
+    "hemoglobin": {
+        "value": 12.6,
+        "unit": "g/dl",
+        "normal_range_female": "12-16 gms"
+    },
+    "rbc": {
+        "value": 5.6,
+        "unit": "mill/cumm",
+        "normal_range": "3.5-5.5 mill/cumm"
+    },
+    "wbc": {
+        "value": 8300,
+        "unit": "cells/cumm",
+        "normal_range": "4,000-11,000 cells/cumm"
+    },
+    "platelet_count": {
+        "value": 288000,
+        "unit": "Lakhs/cumm",
+        "normal_range": "1.5-4.5 Lakhs/cumm"
+    },
+    "differential_count": {
+        "neutrophils": 67,
+        "lymphocytes": 25,
+        "monocytes": 1,
+        "eosinophils": 7,
+        "basophils": 0
+    },
+    "peripheral_smear": "NORMOCYTIC/NORMOCHROMIC",
+    "esr_1hour": 5
+}{
+    "patientName": "Mrs. NAVANEETHA",
+    "age": 26,
+    "sex": "F",
+    "labNo": "0728",
+    "date": "10/04/2013",
+    "tests": {
+        "Complete Blood Picture": {
+            "Hemoglobin": {
+                "result": "12.6 g/dl",
+                "normalRange": "14-18 gms (Male), 12-16 gms (Female)"
+            },
+            "RBC": {
+                "result": "5.6 mill/cumm",
+                "normalRange": "3.5-5.5 mill/cumm"
+            },
+            "WBC": {
+                "result": "8300 cells/cumm",
+                "normalRange": "4,000-11,000 cells/cumm"
+            },
+            "PlateletCount": {
+                "result": "2.88 Lakhs/cumm",
+                "normalRange": "1.5-4.5 Lakhs/cumm"
+            },
+            "DifferentialCount": {
+                "Neutrophils": "67%",
+                "Lymphocytes": "25%",
+                "Monocytes": "1%",
+                "Eosinophils": "7%",
+                "Basophils": "0%"
+            },
+            "PeripheralSmear": "NORMOCYTIC/NORMOCHROMIC",
+            "ESR_1Hour": "5 mm"
+        }
+    }
+}{
+    "patient_name": "Mrs. NAVANEETHA",
+    "age": 26,
+    "sex": "Female",
+    "lab_no": 728,
+    "referral": "Self",
+    "test_date": "10/04/2013",
+    "hemoglobin": {
+        "result": 12.6,
+        "units": "g/dl",
+        "normal_range_female": "12-16 gms"
+    },
+    "rbc": {
+        "result": 5.6,
+        "units": "mill/cumm",
+        "normal_range": "3.5-5.5 mill/cumm"
+    },
+    "wbc": {
+        "result": 8300,
+        "units": "cells/cumm",
+        "normal_range": "4,000-11,000 cells/cumm"
+    },
+    "platelet_count": {
+        "result": 288000,
+        "units": "Lakhs/cumm",
+        "normal_range": "1.5-4.5 Lakhs/cumm"
+    },
+    "differential_count": {
+        "neutrophils": 67,
+        "lymphocytes": 25,
+        "monocytes": 1,
+        "eosinophils": 7,
+        "basophils": 0
+    },
+    "peripheral_smear": "NORMOCYTIC/NORMOCHROMIC",
+    "esr_1hour": 5
+}{
+    "patientName": "Mrs. NAVANEETHA",
+    "age": 26,
+    "sex": "Female",
+    "labNo": "0728",
+    "referralSource": "Self",
+    "testDate": "10/04/2013",
+    "bloodTest": {
+        "hemoglobin": {
+            "value": 12.6,
+            "unit": "g/dl",
+            "normalRangeFemale": "12-16 gms"
+        },
+        "rbc": {
+            "value": 5.6,
+            "unit": "mill/cumm",
+            "normalRange": "3.5-5.5 mill/cumm"
+        },
+        "wbc": {
+            "value": 8300,
+            "unit": "cells/cumm",
+            "normalRange": "4,000-11,000 cells/cumm"
+        },
+        "plateletCount": {
+            "value": 2.88,
+            "unit": "Lakhs/cumm",
+            "normalRange": "1.5-4.5 Lakhs/cumm"
+        },
+        "differentialCount": {
+            "neutrophils": "67%",
+            "lymphocytes": "25%",
+            "monocytes": "1%",
+            "eosinophils": "7%",
+            "basophils": "0%"
+        },
+        "peripheralSmear": "NORMOCYTIC/NORMOCHROMIC",
+        "esr1Hour": "5 mm"
+    }
+}{
+    "patientName": "Mrs. NAVANEETHA",
+    "age": 26,
+    "sex": "F",
+    "labNo": "0728",
+    "date": "10/04/2013",
+    "tests": {
+        "completeBloodPicture": {
+            "hemoglobin": {
+                "value": 12.6,
+                "unit": "g/dl",
+                "normalRange": "12-16 gms (Female)"
+            },
+            "rbc": {
+                "value": 5.6,
+                "unit": "mill/cumm",
+                "normalRange": "3.5-5.5 mill/cumm"
+            },
+            "wbc": {
+                "value": 8300,
+                "unit": "cells/cumm",
+                "normalRange": "4,000-11,000 cells/cumm"
+            },
+            "plateletCount": {
+                "value": 2.88,
+                "unit": "Lakhs/cumm",
+                "normalRange": "1.5-4.5 Lakhs/cumm"
+            },
+            "differentialCount": {
+                "neutrophils": "67%",
+                "lymphocytes": "25%",
+                "monocytes": "1%",
+                "eosinophils": "7%",
+                "basophils": "0%"
+            },
+            "peripheralSmear": "NORMOCYTIC/NORMOCHROMIC",
+            "esr1Hour": {
+                "value": 5,
+                "unit": "mm"
+            }
+        }
+    }
+}
