@@ -1,20 +1,22 @@
 from new_moms_assitant import *
-from flask import Flask, render_template, request,redirect,url_for
+from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
+
 @app.route('/new_chat', methods=['GET'])
 def new_chat():
-        # Reset the chat history
-        write_chat_history({})  # Clear the chat history file
+    # Reset the chat history
+    write_chat_history({})  # Clear the chat history file
 
-        # Redirect back to the main chat page
-        return redirect(url_for('chat'))
+    # Redirect back to the main chat page
+    return redirect(url_for('chat'))
+
+
 @app.route('/', methods=['GET', 'POST'])
 def chat():
     # Load existing chat history
     chat_history = read_chat_history()
-    userresponse = read_user_responses()
     response_message = ""
     ai_response = ""
 
@@ -22,14 +24,6 @@ def chat():
         user_input = request.form['user_input']
         # Get the current timestamp
         timestamp = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-
-        userresponse[timestamp]={
-             'userinput': user_input
-        }
-        write_user_responses(user_input)
-
-
-
 
         # Handle file upload
         file_url = None  # Initialize file_url for file uploads
@@ -42,13 +36,12 @@ def chat():
                 file.save(file_path)  # Save the original file
                 file_name = file.filename  # Store the file name
                 response_message = f"File '{file.filename}' uploaded successfully!"
-                
-                file_url = "uploads/" + file_name 
+
+                file_url = "uploads/" + file_name
                 data = read_file_from_path(file_path)
                 ai_response = report_summarizer(data)
             else:
                 ai_response = simple_assitant(user_input)
-
 
         chat_history[timestamp] = {
             'user_input': user_input,
@@ -64,6 +57,7 @@ def chat():
     sorted_chat_history = sorted(chat_history.items(), key=lambda x: x[0])
 
     return render_template('index.html', response=response_message, chat_history=sorted_chat_history)
+
 
 if __name__ == '__main__':
     app.run(debug=True)
