@@ -14,7 +14,7 @@ UPLOAD_FOLDER = 'static/uploads'
 api = os.getenv('GEMINI_API_KEY')
 genai.configure(api_key=api)
 model = genai.GenerativeModel("gemini-1.5-flash")
-
+print(api)
 # Create uploads folder if it doesn't exist
 if not os.path.exists(UPLOAD_FOLDER):
     os.makedirs(UPLOAD_FOLDER)
