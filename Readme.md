@@ -13,7 +13,7 @@ This is a generative AI-powered chatbot designed to assist new mothers by answer
 
 1. **Clone the Repository**
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/ksai-krishna/New_Moms_Guide.git
    cd New_Moms_Guide
     ```
 2. Install Dependencies
